@@ -20,6 +20,8 @@ module SimpleForm
 
         if options[:bootstrap]
           template "config/initializers/simple_form_bootstrap.rb"
+          template "lib/components/input_group_component.rb"
+          uncomment_lines 'config/initializers/simple_form.rb', /lib\/components/
         elsif options[:foundation]
           template "config/initializers/simple_form_foundation.rb"
         end
